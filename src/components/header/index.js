@@ -20,7 +20,7 @@ import {
 } from "./styles/header";
 
 export default function Header({ bg=true, children, ...restProps }){
-    return bg ? <Background {...restProps}>{children}</Background> : children;
+    return bg ? <Background {...restProps} data-testid="header-bg">{children}</Background> : children;
 }
 Header.FeatureCallOut = function HeaderFeatureCallOut({
   children,
@@ -43,11 +43,11 @@ Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
 Header.Search = function HeaderSearch({searchTerm, setSearchTerm, children, ...restProps }) {
   const [searchActive, setSearchActive] = useState(false);
   return (<Search {...restProps}>
-  <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)} >
+  <SearchIcon onClick={() => setSearchActive((searchActive) => !searchActive)} data-testid="search-click" >
   <img src="/images/icons/search.png" alt="search"/>
   </SearchIcon>
   <SearchInput value={searchTerm} onChange={({target}) => setSearchTerm(target.value)}
-   placeholder="Search films and series" active={searchActive}>
+   placeholder="Search films and series" active={searchActive} data-testid="search-input">
    </SearchInput>
   </Search>);
 };

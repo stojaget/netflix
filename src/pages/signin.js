@@ -44,7 +44,7 @@ history.push(ROUTES.BROWSE);
               value={password}
               onChange={({ target }) => setPassword(target.value)}
             />
-            <Form.Submit disabled={isInvalid} type="submit">Sign In</Form.Submit>
+            <Form.Submit data-testid="sign-in" disabled={isInvalid} type="submit">Sign In</Form.Submit>
           </Form.Base>
           <Form.Text>New to Netflix? <Form.Link to="/signup">Sign Up now</Form.Link></Form.Text>
           <Form.TextSmall>This page is protected by Google reCAPTCHA</Form.TextSmall>
